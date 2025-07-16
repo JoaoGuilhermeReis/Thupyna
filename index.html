@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thupyná</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Thupyná</div>
+    <nav class="menu">
+        <ul>
+            <li><a href="#banner">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#carrossel-produtos">Produtos</a></li>
+            <li><a href="#feedback">Feedbacks</a></li>
+            <li><a href="#contato">Contatos</a></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 0) {
+            navbar.style.background = 'rgba(255,255,255,0.7)';
+            navbar.style.transition = 'background 0.3s';
+        } else {
+            navbar.style.background = '#fff';
+        }
+    });
+</script>
+
+<!-- Seção Banner (HOME) -->
+<section id="banner" class="banner">
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="midia4.jpeg" alt="Banner principal">
+    </div>
+</section>
+
+<!-- Seção SOBRE -->
+<section id="sobre" class="produto">
+    <div class="produto-container">
+        <div class="produto-img">
+            <img src="Midia1.jpeg" alt="Produto Thupyná">
+        </div>
+        <div class="produto-info">
+            <h2>Pimenta ardida</h2>
+            <p>Pimenta no qual arde muito se comer, tome um copo de leite. </p>
+            <a href="https://www.instagram.com/thupyna/" target="_blank" class="botao-comprar">Compre aqui</a>
+        </div>
+    </div>
+</section>
+
+<!-- Seção PRODUTOS -->
+<section id="carrossel-produtos" class="carrossel-produtos">
+    <h2>Conheça nossos produtos</h2>
+    <div class="carrossel-container" style="display: flex; justify-content: center; align-items: center; gap: 24px;">
+        <div class="produto-card" style="display: flex; flex-direction: column; align-items: center;">
+            <img src="pote120ml.jpeg" alt="Produto">
+            <h1>Molho de Pimenta</h1>
+            <p>R$35,00</p>
+            <a href="https://wa.me/5599999999999" target="_blank" class="btn-comprar">Comprar</a>
+        </div>
+        <div class="produto-card" style="display: flex; flex-direction: column; align-items: center;">
+            <img src="pote200ml.jpeg" alt="Produto">
+            <h1>Molho de Pimenta com Goiaba</h1>
+            <p>R$42,00</p>
+            <a href="https://wa.me/5599999999999" target="_blank" class="btn-comprar">Comprar</a>
+        </div>
+        <div class="produto-card" style="display: flex; flex-direction: column; align-items: center;">
+            <img src="pote240ml.jpeg" alt="Produto">
+            <h1>Pimenta Agridoce</h1>
+            <p>R$40,00</p>
+            <a href="https://wa.me/5599999999999" target="_blank" class="btn-comprar">Comprar</a>
+        </div>
+    </div>
+</section>
+
+
+<section class="imagem-centralizada">
+  <img src="https://picsum.photos/1000/400" alt="Imagem destaque">
+</section>
+
+<!-- Seção de Feedback -->
+<section id="feedback" class="feedback">
+  <h2>Feedback dos Clientes</h2>
+  <div class="feedback-cards">
+    <div class="card">
+      <p>"Excelente atendimento e produto de alta qualidade!"</p>
+      <h4>- Ana Silva</h4>
+    </div>
+    <div class="card">
+      <p>"Super recomendo, chegou antes do prazo e adorei o design."</p>
+      <h4>- Carlos Souza</h4>
+    </div>
+    <div class="card">
+      <p>"Ótima experiência, suporte rápido e eficiente."</p>
+      <h4>- Mariana Oliveira</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de Contato -->
+<section id="contato" class="contato">
+  <h2>Fique por dentro</h2>
+  <p>Nos siga no instagram!</p>
+  
+  <div class="carrossel-instagram">
+    <img src="popup.jpeg" alt="Instagram 1" class="ativo">
+    <img src="pote120ml.jpeg" alt="Instagram 2">
+    <img src="pote200ml.jpeg" alt="Instagram 3">
+    <img src="pote240ml.jpeg" alt="Instagram 4">
+    <img src="midia2.jpeg" alt="Instagram 5">
+  </div>
+
+  <div style="text-align: center; margin-top: 16px;">
+    <a href="https://instagram.com/thupyna" target="_blank" class="btn-instagram" style="
+  display: inline-block;
+  padding: 10px 24px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+">
+  Ir para o Instagram
+</a>
+
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>Thupyna 🌶️</h3>
+      <p>Molhos artesanais com sabor e qualidade. Feito com carinho no Brasil.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Links Rápidos</h4>
+      <ul>
+        <li><a href="index.html#produtos">Produtos</a></li>
+        <li><a href="index.html#feedback">Feedbacks</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <p>Email: <a href="mailto:thupynagoes@gmail.com">thupynagoes@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/thupyna" target="_blank">@Thupyna</a></p>
+      <p>WhatsApp: <a href="https://wa.me/+5579996583969" target="_blank">Clique aqui</a></p>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    
+    <p>© 2025 Thupyna • Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+
+
+<script>
+  const imagens = document.querySelectorAll('.carrossel-instagram img');
+  let indice = 0;
+
+  function trocarImagem() {
+    imagens[indice].classList.remove('ativo');
+    indice = (indice + 1) % imagens.length;
+    imagens[indice].classList.add('ativo');
+  }
+
+  setInterval(trocarImagem, 4000); // troca a cada 4 segundos
+</script>
+
+</body>
+</html>
