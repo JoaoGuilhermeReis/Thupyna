@@ -12,6 +12,7 @@
 
 <header class="navbar">
     <div class="logo">Thupyná</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav class="menu">
         <ul>
             <li><a href="#banner">Home</a></li>
@@ -33,6 +34,11 @@
             navbar.style.background = '#fff';
         }
     });
+    
+    function toggleMenu() {
+    const menu = document.querySelector('.menu ul');
+    menu.classList.toggle('active');
+  }
 </script>
 
 <!-- Seção Banner (HOME) -->
