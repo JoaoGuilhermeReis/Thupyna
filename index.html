@@ -9,7 +9,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
+<style>
+.imagem-centralizada {
+  padding: 40px 20px 60px;
+  background-color: #fffffffb;
+  display: flex;
+  justify-content: center;
+}
 
+.imagem-centralizada img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 1px;
+  object-fit: contain;
+  object-position: center;
+  box-shadow: none;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .imagem-centralizada img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+</style>
 <header class="navbar">
     <div class="logo">Thupyná</div>
     
