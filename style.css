@@ -212,28 +212,39 @@ color: #333;
 /*banner*/
 /* Section de Imagem Centralizada */
 .imagem-centralizada {
-  padding: 90px 30px 80px; /* menor topo, maior embaixo */
+  padding: 90px 30px 80px;
   background-color: #fffffffb;
   display: flex;
   justify-content: center;
 }
 
 .imagem-centralizada img {
-  width: 80%;
+  width: 100%;
   max-width: 1000px;
-  height: min-content;
+  height: auto;
   border-radius: 1px;
+  object-fit: contain;
+  object-position: center;
 
-  /* Zoom e posicionamento */
-  transform: scale(1.08);
-  transform-origin: center top;
-
-  object-fit: cover;
-  object-position: center 20%;
-
-  aspect-ratio: 16 / 6;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+  /* Removendo transformações que afetam responsividade */
+  transform: none;
+  aspect-ratio: auto;
+  box-shadow: none;
 }
+
+/* Responsividade no celular */
+@media (max-width: 768px) {
+  .imagem-centralizada {
+    padding: 40px 20px 60px;
+  }
+
+  .imagem-centralizada img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 
 
 /* Section Feedback */
