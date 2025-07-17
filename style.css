@@ -48,6 +48,36 @@ color: #333;
 .menu a:hover {
   color: #007bff;
 }
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menu ul {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px #00000020;
+    display: none;
+  }
+
+  .menu ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
 
 .banner img {
   width: 100%;
