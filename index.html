@@ -37,10 +37,7 @@
         }
     });
     
-    function toggleMenu() {
-    const menu = document.querySelector('.menu ul');
-    menu.classList.toggle('active');
-  }
+    
 </script>
 
 <!-- Seção Banner (HOME) -->
@@ -206,6 +203,7 @@
 
 
 <script>
+  // Troca de imagem do carrossel
   const imagens = document.querySelectorAll('.carrossel-instagram img');
   let indice = 0;
 
@@ -215,21 +213,33 @@
     imagens[indice].classList.add('ativo');
   }
 
-  setInterval(trocarImagem, 4000); // troca a cada 4 segundos
+  setInterval(trocarImagem, 4000);
 
+  // Botão hamburguer funcionando
+  document.addEventListener('DOMContentLoaded', function () {
+    const btnMenu = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu ul');
 
-const btnMenu = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu ul');
+    btnMenu.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
 
-  btnMenu.addEventListener('click', () => {
-    menu.classList.toggle('active');
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+      });
+    });
   });
 
-  // Opcional: fechar menu ao clicar em um link
-  menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('active');
-    });
+  // Navbar com transparência ao rolar
+  window.addEventListener('scroll', function () {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 0) {
+      navbar.style.background = 'rgba(255,255,255,0.7)';
+      navbar.style.transition = 'background 0.3s';
+    } else {
+      navbar.style.background = '#fff';
+    }
   });
 </script>
 
