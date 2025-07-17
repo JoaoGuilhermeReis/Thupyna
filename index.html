@@ -12,7 +12,9 @@
 
 <header class="navbar">
     <div class="logo">Thupyná</div>
+    
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    
     <nav class="menu">
         <ul>
             <li><a href="#banner">Home</a></li>
@@ -215,6 +217,20 @@
 
   setInterval(trocarImagem, 4000); // troca a cada 4 segundos
 
+
+const btnMenu = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu ul');
+
+  btnMenu.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+
+  // Opcional: fechar menu ao clicar em um link
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('active');
+    });
+  });
 </script>
 
 
