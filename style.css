@@ -49,19 +49,17 @@ color: #333;
   color: #007bff;
 }
 
-/* Banner estilo cinema */
 .banner img {
   width: 100%;
   height: auto;
-  aspect-ratio: 21 / 9;
-  object-fit: cover;
-  display: block;
+  max-height: 600px; /* opcional, para evitar que fique muito alto */
+  object-fit: cover; /* garante que preencha bem sem distorcer */
 }
 
 
 /* Section de Produto */
 .produto {
-  padding: 60px 40px;
+  padding: 70px 40px;
   background-color: #fafafa;
 }
 
@@ -76,7 +74,7 @@ color: #333;
 }
 
 .produto-img img {
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
   border-radius: 1px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -175,8 +173,8 @@ color: #333;
 /*banner*/
 /* Section de Imagem Centralizada */
 .imagem-centralizada {
-  padding: 60px 20px;
-  background-color: #f5f5f5;
+  padding: 90px 30px 80px; /* menor topo, maior embaixo */
+  background-color: #fffffffb;
   display: flex;
   justify-content: center;
 }
@@ -184,12 +182,20 @@ color: #333;
 .imagem-centralizada img {
   width: 80%;
   max-width: 1000px;
-  height: auto;
+  height: min-content;
   border-radius: 1px;
+
+  /* Zoom e posicionamento */
+  transform: scale(1.08);
+  transform-origin: center top;
+
   object-fit: cover;
-  aspect-ratio: 16 / 6; /* proporção horizontal */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  object-position: center 20%;
+
+  aspect-ratio: 16 / 6;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
 }
+
 
 /* Section Feedback */
 .feedback {
@@ -250,36 +256,56 @@ color: #333;
   color: #555;
 }
 
-/* Carrossel Instagram */
-.carrossel-instagram {
-    position: relative;
-    width: 80%;
-    max-width: 250px;
-    height: 350px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 1px;
+/* Grade estilo feed do Instagram */
+.grade-instagram {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
+  gap: 4px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.carrossel-instagram img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 3 / 4; /* proporção vertical */
-    opacity: 0;
-    filter: blur(6px);
-    transition: opacity 1s ease, filter 1s ease;
-    pointer-events: none;
+.grade-instagram img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* garante que fique quadrada */
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+}
+.grade-instagram a {
+  display: block;
+  text-decoration: none;
 }
 
-.carrossel-instagram img.ativo {
-    opacity: 1;
-    filter: blur(0);
-    pointer-events: auto;
+.grade-instagram a {
+  display: block;
+  text-decoration: none;
+  overflow: hidden; /* impede que a imagem "vaze" do espaço */
 }
+
+.grade-instagram img {
+  transition: transform 0.3s ease; /* animação suave */
+}
+
+.grade-instagram a:hover img {
+  transform: scale(1.05); /* zoom de 5% */
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .grade-instagram {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grade-instagram {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .footer {
   background-color: #e2e2e2;
@@ -338,4 +364,101 @@ color: #333;
 .btn-instagram:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.feedback-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 250px;
+}
+
+.feedback-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.carrossel-produtos h3 {
+  font-size: 1.1rem;
+  margin: 8px 0 4px;
+}
+.carrossel-produtos h2 {
+  font-size: 1.6rem;
+}
+
+.produtos {
+  padding: 60px 40px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.produtos-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.produto-card {
+  width: 250px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  
+  transition: transform 0.3s ease;
+}
+
+.produto-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0px;
+  margin-bottom: 10px;
+}
+
+.produto-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.produto-card p {
+  font-size: 16px;
+  margin: 5px 0 15px;
+  color: #444;
+}
+
+.btn-comprar {
+  padding: 10px 20px;
+  background-color: #e4e4e4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background-color: #00b837;
+}
+
+.produto-card:hover {
+  transform: scale(1.03);
 }
